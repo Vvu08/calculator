@@ -33,12 +33,25 @@ result.addEventListener('click', ()=>{
         input.value = eval(res)
         res = input.value
     } catch(e){
-        input.value = 'Please try again'
         input.style.color = 'rgb(205,92,50)'
-        
+        input.value = 'Please try again'
+        //disabling calc
+        buttons.forEach(btn => {
+            btn.disabled = true
+        });
+        clear.disabled = true
+        ac.disabled = true
+
         setTimeout(()=> {
+            input.style.color = 'black'
             input.value = ''
             res = ''
-        }, 1500)
+            //abling calc
+            buttons.forEach(btn => {
+                btn.disabled = false
+            });
+            clear.disabled = false
+            ac.disabled = false
+        }, 1000)
     }
 })
