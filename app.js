@@ -9,7 +9,6 @@ let res = ''
 function Display(val){
     input.value += val
     res += val
-    console.log(res);
 }
 
 for (const btn of buttons){
