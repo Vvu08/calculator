@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll('.btn')
+const allButtons = document.querySelectorAll('button')
 const input = document.querySelector('.input')
 const result = document.querySelector('.result')
 const clear = document.querySelector('.clear')
@@ -34,23 +35,19 @@ result.addEventListener('click', ()=>{
     } catch(e){
         input.style.color = 'rgb(205,92,50)'
         input.value = 'Please try again'
-        //disabling calc
-        buttons.forEach(btn => {
-            btn.disabled = true
+
+        allButtons.forEach(button => {
+            button.disabled = true
         });
-        clear.disabled = true
-        ac.disabled = true
 
         setTimeout(()=> {
             input.style.color = 'black'
             input.value = ''
             res = ''
-            //abling calc
-            buttons.forEach(btn => {
-                btn.disabled = false
+
+            allButtons.forEach(button => {
+                button.disabled = false
             });
-            clear.disabled = false
-            ac.disabled = false
         }, 1000)
     }
 })
