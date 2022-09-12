@@ -4,6 +4,7 @@ const input = document.querySelector('.input')
 const result = document.querySelector('.result')
 const clear = document.querySelector('.clear')
 const ac = document.querySelector('.ac')
+const percentage = document.querySelector('.percentage')
 
 let res = ''
 
@@ -13,24 +14,29 @@ function Display(val){
 }
 
 for (const btn of buttons){
-    btn.addEventListener('click', ()=>{
+    btn.addEventListener('click', () => {
         Display(btn.innerHTML)
     })
 }
 
-ac.addEventListener('click', ()=>{
+ac.addEventListener('click', () => {
     input.value = ''
     res = ''
 })
 
-clear.addEventListener('click', ()=>{
+clear.addEventListener('click', () => {
     input.value = res.slice(0, res.length-1)
+    res = input.value
+})
+
+percentage.addEventListener('click', () => {
+    input.value = eval(res)/100
     res = input.value
 })
 
 result.addEventListener('click', ()=>{
     try{
-        input.value = eval(res)
+        input.value = +(eval(res)).toFixed(10)
         res = input.value
     } catch(e){
         input.style.color = 'rgb(205,92,50)'

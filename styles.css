@@ -3,7 +3,7 @@
   }
 
 body{
-    background-color: #f1f1f1;
+    background-color: #33302d;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -36,12 +36,17 @@ body{
 
 .container button{
     background-color: rgba(128, 128, 128, 0.195);
+    color: rgb(228, 228, 228);
     border: none;
     padding: 15px;
     width: 80px;
     text-align: center;
     font-size: 24px;
     cursor: pointer;
+}
+
+.container button:hover {
+    background-color: rgba(190, 190, 190, 0.282);
 }
 
 .container button.operation{
